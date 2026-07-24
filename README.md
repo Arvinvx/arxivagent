@@ -8,13 +8,18 @@ Cliconnect is an AI-powered research assistant that helps you find papers on [ar
 
 ## Screenshots
 
-### Terminal UI
-
-![Terminal UI](docs/screenshots/terminal.png)
-
-### CLI example
-
-![CLI example](docs/screenshots/cmd_example.png)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <strong>CLI</strong><br/>
+      <img src="docs/screenshots/cmd_example.png" alt="CLI" />
+    </td>
+    <td align="center" width="50%">
+      <strong>UI</strong><br/>
+      <img src="docs/screenshots/terminal.png" alt="UI" />
+    </td>
+  </tr>
+</table>
 
 ---
 
