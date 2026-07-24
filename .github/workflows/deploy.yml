@@ -18,7 +18,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          username: arvinvx
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push
@@ -26,4 +26,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/arxivagent:latest
+          tags: arvinvx/arxivagent:latest
