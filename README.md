@@ -6,6 +6,16 @@ Cliconnect is an AI-powered research assistant that helps you find papers on [ar
 
 **Store:** [ar4x.store](https://www.ar4x.store/)
 
+## Screenshots
+
+### Terminal UI
+
+![Terminal UI](docs/screenshots/terminal.png)
+
+### CLI example
+
+![CLI example](docs/screenshots/cmd_example.png)
+
 ---
 
 ## What it does
@@ -60,16 +70,6 @@ Think of it as: *paper → conversation → code*, without leaving your workflow
 └─────────────────┘                  └──────────────────┘
 ```
 
-| Path | Role |
-|------|------|
-| `server.js` | Express server (port `3000`) |
-| `auth/` | Signup, login, logout, verify key, generate key |
-| `db/` | Supabase client |
-| `ai/` | Agent, tools, arXiv fetcher, coding agent, memory |
-| `cli/` | Commander CLI (`login`, `run`) |
-| `fancy.jsx` | Terminal chat UI (Ink + Shiki) |
-| `frontend/` | React dashboard for auth + keys |
-
 ---
 
 ## Stack
@@ -99,25 +99,6 @@ SUPABASE_SERVICE_KEY=your-service-role-key
 # Express sessions
 SESSION_SECRET=a-long-random-string
 ```
-
-### Suggested Supabase tables
-
-**`users`**
-
-| Column | Type | Notes |
-|--------|------|--------|
-| `id` | uuid / serial | Primary key |
-| `name` | text | |
-| `email` | text | Unique |
-| `password` | text | bcrypt hash |
-
-**`api_keys`**
-
-| Column | Type | Notes |
-|--------|------|--------|
-| `user_id` | references users | Owner |
-| `hashed_key` | text | SHA-256 of the raw key |
-| `revoked` | boolean | Soft revoke |
 
 ---
 
@@ -246,35 +227,6 @@ Cliconnect/
         ├── main.jsx
         └── index.css
 ```
-
----
-
-## Security notes
-
-- Passwords are hashed with **bcrypt**  
-- API keys are stored only as **SHA-256 hashes**; the raw key is returned once at generation  
-- Session cookies are `httpOnly` with a 24h max age  
-- Keep `.env` and `~/.arxconfig` out of version control and public shares  
-- Revoked keys are rejected by `/auth/verify-key`  
-
----
-
-## Development tips
-
-- Frontend talks to `http://localhost:3000` with `credentials: "include"`  
-- CLI config file: `~/.arxconfig` (`api_key=arx_…`)  
-- Terminal theme uses green accents (`#22C55E`) and Shiki `dark-plus` for code blocks  
-- arXiv client retries on `429` / `503` with backoff  
-
----
-
-## Roadmap ideas
-
-- [ ] Publish `arxcli` as a global npm package  
-- [ ] More tools (PDF full-text, multi-paper compare, citations)  
-- [ ] Persist chat history per user  
-- [ ] Key list + revoke UI on the dashboard  
-- [ ] Production deploy (API + frontend) with proper HTTPS cookies  
 
 ---
 
