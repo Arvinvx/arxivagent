@@ -1,0 +1,24 @@
+{
+  "name": "cliconnect",
+  "version": "1.0.0",
+  "description": "",
+  "main": "check.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@inkjs/ui": "^2.0.0",
+    "ink": "^7.1.1",
+    "ink-spinner": "^5.0.0",
+    "react": "^19.2.8",
+    "shiki": "^4.3.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.1"
+  }
+}
