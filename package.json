@@ -13,10 +13,22 @@
   "type": "module",
   "dependencies": {
     "@inkjs/ui": "^2.0.0",
+    "@supabase/supabase-js": "^2.110.8",
+    "bcryptjs": "^3.0.3",
+    "chalk": "^5.6.2",
+    "commander": "^15.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "fast-xml-parser": "^5.10.1",
     "ink": "^7.1.1",
     "ink-spinner": "^5.0.0",
+    "openai": "^6.49.0",
+    "prompts": "^2.4.2",
     "react": "^19.2.8",
-    "shiki": "^4.3.1"
+    "shiki": "^4.3.1",
+    "validator": "^13.15.35"
   },
   "devDependencies": {
     "tsx": "^4.23.1"
